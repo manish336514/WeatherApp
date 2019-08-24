@@ -1,0 +1,8 @@
+.container {
+  align-content: center;
+  background-color: skyblue;
+  padding: 5rem;
+  justify-content: center;
+  border: 1rem solid black;
+  font-family: cursive;
+}
