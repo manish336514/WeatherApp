@@ -12,6 +12,6 @@ export class CurrentComponent implements OnInit {
   constructor(private ws: WeatherService) {}
 
   ngOnInit() {
-    this.ws.weatherNow;
+    this.myWeather = this.ws.weatherNow();
   }
 }
