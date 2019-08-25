@@ -6,3 +6,18 @@
   border: 1rem solid black;
   font-family: cursive;
 }
+.header-class {
+  font-size: 1rem;
+  background-color: yellow;
+  padding-left: 5rem;
+}
+
+.header-value {
+  background-color: lightyellow;
+  padding-left: 5rem;
+}
+
+.img {
+  padding-left: 5rem;
+  background-color: white;
+}

@@ -1,16 +1,17 @@
+<h1>Current Weather</h1>
 <div class="container">
-  <h1>Name of City</h1>
-  <h1>{{ myWeather.cityName }}</h1>
-
-  <h1>Temperature</h1>
-
-  <div class="img">
-    <img
-      src="https://image.shutterstock.com/image-photo/mountains-during-sunset-beautiful-natural-260nw-407021107.jpg"
-    />
+  <div class="header-class">Name of City</div>
+  <div class="header-value">{{ myWeather.cityName }}</div>
+  <div class="header-class">Temperature</div>
+  <div class="header-value">{{ myWeather.temerature }}</div>
+  <div class="header-class" class="img">
+    <img src="{{ myWeather.icon }}" />
   </div>
 
-  <h3>Kind of Wether</h3>
-  <h4>Max</h4>
-  <h4>Min</h4>
+  <div class="header-class">Kind of Wether</div>
+  <div class="header-value">{{ myWeather.weatherkind }}</div>
+  <div class="header-class">Max</div>
+  <div class="header-value">{{ myWeather.tempMax }}</div>
+  <div class="header-class">Min</div>
+  <div class="header-value">{{ myWeather.temMin }}</div>
 </div>
