@@ -24,6 +24,7 @@ export class WeatherService {
   }
 
   localweather(lat: string, lon: string) {
+    console.log("location", lat, lon);
     return this.http
       .get(
         `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=f70c6203679428cb08cedfa74779b13d`

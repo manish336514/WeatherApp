@@ -20,21 +20,48 @@ export class CurrentComponent implements OnInit {
   ngOnInit() {
     // this.myWeather = this.ws.weatherNow();
 
-    navigator.geolocation.getCurrentPosition(pos => {
-      this.location = pos.coords;
-      console.log("pos", pos);
+    let promiselocationget = new Promise((res, rej) => {
+      navigator.geolocation.getCurrentPosition(pos => {
+        this.location = pos.coords;
+        console.log("pos", pos.coords);
+        res(pos);
+      });
     });
 
-    this.ws.localweather("12.97", "77.59").subscribe(data => {
-      console.log("data", data);
-      this.myWeather = new CurrentWeather(
-        data.name,
-        data.main.temp,
-        data.weather[0].icon,
-        data.weather[0].description,
-        data.main.temp_max,
-        data.main.temp_min
-      );
+    promiselocationget.then(fromRes => {
+      console.log("fromRes", fromRes);
+      let lat = this.location.latitude;
+      let lon = this.location.longitude;
+      console.log("lat and lon", lat, lon);
+      // this.ws.localweather("12.97", "77.59").subscribe(data => {
+      this.ws.localweather(lat, lon).subscribe(data => {
+        console.log("data", data);
+        this.myWeather = new CurrentWeather(
+          data.name,
+          data.main.temp,
+          data.weather[0].icon,
+          data.weather[0].description,
+          data.main.temp_max,
+          data.main.temp_min
+        );
+      });
     });
+
+    // navigator.geolocation.getCurrentPosition(pos => {
+    //   this.location = pos.coords;
+    //   console.log("pos", pos);
+    // });
+
+    // this.ws.localweather("12.97", "77.59").subscribe(data => {
+    //   console.log("data", data);
+    //   this.myWeather = new CurrentWeather(
+    //     data.name,
+    //     data.main.temp,
+    //     data.weather[0].icon,
+    //     data.weather[0].description,
+    //     data.main.temp_max,
+    //     data.main.temp_min
+    //   );
+    // });
   }
 }
