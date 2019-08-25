@@ -1,7 +1,7 @@
 .container {
   align-content: center;
   background-color: skyblue;
-  padding: 5rem;
+  padding: 2rem;
   justify-content: center;
   border: 1rem solid black;
   font-family: cursive;
@@ -11,14 +11,17 @@
   background-color: yellow;
   /* padding-left: 5rem; */
   text-align: center;
+  padding: 0.5rem;
 }
 
 .header-value {
   background-color: lightyellow;
   text-align: center;
+  padding: 0.5rem;
 }
 
 .img {
   background-color: white;
   text-align: center;
+  padding: 0.5rem;
 }

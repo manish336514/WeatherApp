@@ -14,11 +14,16 @@ import "rxjs/Rx";
 })
 export class CurrentComponent implements OnInit {
   myWeather: CurrentWeather;
-
+  location;
   constructor(private ws: WeatherService) {}
 
   ngOnInit() {
     // this.myWeather = this.ws.weatherNow();
+
+    navigator.geolocation.getCurrentPosition(pos => {
+      this.location = pos.coords;
+      console.log("pos", pos);
+    });
 
     this.ws.localweather("12.97", "77.59").subscribe(data => {
       console.log("data", data);
