@@ -4,7 +4,7 @@ import { CurrentWeather } from "../current-weather";
 import "rxjs/Rx";
 // import { subscribe } from "rxjs/operators";
 
-import { filter, map } from "rxjs/operators";
+// import { filter, map } from "rxjs/operators";
 
 @Component({
   selector: "app-current",
@@ -18,7 +18,7 @@ export class CurrentComponent implements OnInit {
   constructor(private ws: WeatherService) {}
 
   ngOnInit() {
-    this.myWeather = this.ws.weatherNow();
+    // this.myWeather = this.ws.weatherNow();
 
     this.ws.localweather("12.97", "77.59").subscribe(data => {
       console.log("data", data);

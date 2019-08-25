@@ -9,15 +9,16 @@
 .header-class {
   font-size: 1rem;
   background-color: yellow;
-  padding-left: 5rem;
+  /* padding-left: 5rem; */
+  text-align: center;
 }
 
 .header-value {
   background-color: lightyellow;
-  padding-left: 5rem;
+  text-align: center;
 }
 
 .img {
-  padding-left: 5rem;
   background-color: white;
+  text-align: center;
 }
