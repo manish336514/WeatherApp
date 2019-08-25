@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { CurrentWeather } from "./current-weather";
+// import { Http, Response } from "@angular/http";
 import { Http, Response } from "@angular/http";
 // import "rxjs/Rx";
 import { map } from "rxjs/operators";
@@ -23,12 +24,12 @@ export class WeatherService {
   }
 
   localweather(lat: string, lon: string) {
-    return;
-    this.http
+    return this.http
       .get(
-        "https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=f70c6203679428cb08cedfa74779b13d&units=imperial"
+        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=f70c6203679428cb08cedfa74779b13d`
       )
       .map((response: Response) => response.json());
   }
 }
 // https://api.openweathermap.org/data/2.5/weather?lat=12.97&lon=77.59&appid=f70c6203679428cb08cedfa74779b13d
+//

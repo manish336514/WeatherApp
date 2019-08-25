@@ -7,6 +7,7 @@ import { CurrentComponent } from "./current/current.component";
 import { ForecastComponent } from "./forecast/forecast.component";
 import { weatherRouting } from "./weather.routing";
 import { WeatherService } from "./weather.service";
+import { HttpModule } from "@angular/http";
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { WeatherService } from "./weather.service";
     CurrentComponent,
     ForecastComponent
   ],
-  imports: [BrowserModule, weatherRouting],
+  imports: [BrowserModule, weatherRouting, HttpModule],
   providers: [WeatherService],
   bootstrap: [AppComponent]
 })
