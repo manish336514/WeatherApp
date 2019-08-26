@@ -2,9 +2,11 @@ import { Component, OnInit } from "@angular/core";
 import { WeatherService } from "../weather.service";
 import { CurrentWeather } from "../current-weather";
 import "rxjs/Rx";
+import { NgForm } from "@angular/forms";
+
 // import { subscribe } from "rxjs/operators";
 
-// import { filter, map } from "rxjs/operators";
+import { filter, map } from "rxjs/operators";
 
 @Component({
   selector: "app-current",
@@ -63,5 +65,21 @@ export class CurrentComponent implements OnInit {
     //     data.main.temp_min
     //   );
     // });
+  }
+  onSubmit(f: NgForm) {
+    console.log("NG FORM VALUE", f.value.city); // { first: '', last: '' }
+    // console.log(f.valid); // false
+    console.log("onsubmit form value", f.value.city);
+    this.ws.cityweather(f.value.city).subscribe(data => {
+      console.log("data", data);
+      this.myWeather = new CurrentWeather(
+        data.name,
+        data.main.temp,
+        data.weather[0].icon,
+        data.weather[0].description,
+        data.main.temp_max,
+        data.main.temp_min
+      );
+    });
   }
 }

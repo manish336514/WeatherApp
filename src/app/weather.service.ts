@@ -31,6 +31,15 @@ export class WeatherService {
       )
       .map((response: Response) => response.json());
   }
+
+  cityweather(name1: string) {
+    console.log("city name", name1);
+    return this.http
+      .get(
+        `https://api.openweathermap.org/data/2.5/weather?q=${name1}&appid=f70c6203679428cb08cedfa74779b13d`
+      )
+      .map((response: Response) => response.json());
+  }
 }
 // https://api.openweathermap.org/data/2.5/weather?lat=12.97&lon=77.59&appid=f70c6203679428cb08cedfa74779b13d
-//
+//api.openweathermap.org/data/2.5/weather?q=London

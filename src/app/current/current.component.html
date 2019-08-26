@@ -15,3 +15,9 @@
   <div class="header-class">Min</div>
   <div class="header-value">{{ myWeather.temMin }}</div>
 </div>
+<div class="submit-button">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+    <input name="city" ngModel />
+    <button>Submit</button>
+  </form>
+</div>
