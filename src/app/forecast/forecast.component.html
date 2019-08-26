@@ -1,1 +1,17 @@
 <p>forecast works!</p>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <input type="text" name="fiveday" ngModel />
+  <button>Go</button>
+</form>
+
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit1()">
+  <label>
+    Five Day ForeCast City
+    <input type="text" formControlName="forecastcity" />
+  </label>
+  <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+</form>
+<!-- <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+    <input name="city" ngModel />
+    <button>Submit</button>
+  </form> -->

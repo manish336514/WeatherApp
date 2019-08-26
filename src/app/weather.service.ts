@@ -3,7 +3,7 @@ import { CurrentWeather } from "./current-weather";
 // import { Http, Response } from "@angular/http";
 import { Http, Response } from "@angular/http";
 import "rxjs/Rx";
-import { map } from "rxjs/operators";
+// import { map } from "rxjs/operators";
 
 @Injectable({
   providedIn: "root"
